@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Development & Deployment - ADR TECHNOLOGY</title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="ADR TECHNOLOGY - Development & Deployment Services for Custom Mobile Solutions" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/zefxa-icons/style.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/zefxa.css" />
+    <link rel="stylesheet" href="assets/css/zefxa-responsive.css" />
+
+    <style>
+        .scroll-offset {
+            position: relative;
+            padding-top: 100px;
+            /* Adjust this to match or slightly exceed your navbar height */
+            margin-top: -100px;
+            /* Negative margin pulls the content back up */
+        }
+
+        html {
+            scroll-padding-top: 180px;
+            scroll-behavior: smooth;
+        }
+
+        .main-menu__logo {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .logo-img {
+            width: 220px;
+            /* Adjust the size of the logo */
+            height: 12vh;
+            /* Set height as per your requirement */
+        }
+
+        .stmt {
+            font-size: calc(12vh * 0.8);
+            /* Dynamically adjust the text size to match the logo height */
+            margin-left: 5px;
+            line-height: 12vh;
+        }
+
+        .flex1 {
+            display: flex;
+            align-items: center;
+            /* margin-right:-30px */
+        }
+
+        /* Full-width content styling */
+        .service-details__content {
+            max-width: 100%;
+            padding: 0 30px;
+        }
+
+        .service-details__text-1,
+        .service-details__text-2,
+        .service-details__text-3,
+        .service-details__text-4,
+        .service-details__text-5,
+        .service-details__text-6 {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #333;
+            text-align: justify;
+        }
+
+        .service-details__subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            color: #00bfff;
+            margin: 30px 0 20px 0;
+            border-left: 4px solid #00bfff;
+            padding-left: 15px;
+        }
+
+        .service-details__benefits-box {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .service-details__benefits-single {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-details__benefits-single .service-details__benefits-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-details__benefits-single .service-details__benefits-content h4 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .service-details__benefits-single .service-details__benefits-content p {
+            flex: 1;
+            margin: 0;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .service-details__benefits-single:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-details__content .row {
+            margin-bottom: 40px;
+        }
+
+        .service-details__content .col-lg-6 {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-left: 4px solid #00bfff;
+        }
+
+        .service-details__content .col-lg-6:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Sidebar styling */
+        .service-details__sidebar {
+            position: sticky;
+            top: 120px;
+            margin-bottom: 30px;
+        }
+
+        .service-details__categories {
+            background: #2a2a2a;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-details__categories-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00bfff;
+        }
+
+        .service-details__categories-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-details__categories-list li {
+            margin-bottom: 10px;
+        }
+
+        .service-details__categories-list li a {
+            display: block;
+            padding: 12px 15px;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: #3a3a3a;
+        }
+
+        .service-details__categories-list li a:hover {
+            background: #4a4a4a;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .service-details__categories-list li.current a {
+            background: #00bfff;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+        }
+
+        .service-details__need-help {
+            background: #2a2a2a;
+            border-radius: 10px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-details__need-help-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .service-details__need-help-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-details__need-help-text {
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-details__need-help-phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            background: #3a3a3a;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .service-details__need-help-phone-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .service-details__need-help-phone-icon span {
+            color: #00bfff;
+            font-size: 20px;
+        }
+
+        .service-details__need-help-phone-content {
+            text-align: center;
+        }
+
+        .service-details__need-help-phone-content span {
+            display: block;
+            font-size: 14px;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .service-details__need-help-phone-content p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .service-details__need-help-phone-content p a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .service-details__need-help-phone-content p a:hover {
+            color: #00bfff;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .service-details__sidebar {
+                position: static;
+                margin-bottom: 40px;
+            }
+        }
+
+        /* Page header spacing */
+        .page-header__inner h2 {
+            margin-bottom: 30px;
+        }
+
+        .page-header__inner .thm-breadcrumb {
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+
+
+<body class="custom-cursor">
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+
+    <div class="page-wrapper">
+        <header class="main-header">
+            <nav class="main-menu">
+                <div class="main-menu__wrapper">
+                    <div class="container">
+                        <div class="main-menu__wrapper-inner">
+                            <div class="main-menu__left">
+                                <div class="main-menu__logo">
+                                    <a href="index.html"><img
+                                            src="assets/images/resources/transparent_background_image.png" alt
+                                            style="width: 140px; height: 12vh ;margin-right:-30px;margin-left:-30px" /></a>
+                                    <div class="stmt">ADR</div>
+                                </div>
+                                <div class="main-menu__main-menu-box">
+                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                    <ul class="main-menu__list">
+                                        <li class="dropdown">
+                                            <a href="index.html"><i class="bi bi-house"></i>Home</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#"><i class="bi bi-gear"></i> Services</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="website-development.html">Web Development & Designing</a>
+                                                </li>
+                                                <li>
+                                                    <a href="Data Analytics & Power BI.html">Data Analytics & Power
+                                                        BI</a>
+                                                </li>
+                                                <li>
+                                                    <a href="Project-marketing.html">Project And Data Management</a>
+                                                </li>
+                                                <li class="current">
+                                                    <a href="Development & Deployement.html">Development &
+                                                        Deployement</a>
+                                                </li>
+                                                <li><a href="Artificial Intelligence & Machine Learning.html">Artificial
+                                                    Intelligence & Machine Learning</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#"><i class="bi bi-diagram-3"></i> Projects</a>
+                                            <ul>
+                                                <li><a href="projects.html">Projects</a></li>
+                                                <li><a href="project-details.html">Project Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#"><i class="bi bi-building"></i> Industry</a>
+                                            <ul>
+                                                <li><a href="Banking & Financial Services.html">Banking & Financial
+                                                        Services</a></li>
+                                                <li><a href="travel Transportation & Hospitatlity.html">Travel
+                                                        Transportation & Hospitatlity</a></li>
+                                                <li><a href="Insurance.html">Insurance</a></li>
+                                                <li><a href="Retail & Consumer Goods.html">Retail & Consumer Goods</a>
+                                                </li>
+                                                <li><a href="Social Media Platforms.html">Social Media Platforms</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="main-menu__right">
+                                <div class="main-menu__cart-search-box">
+                                    <a href="#" class="main-menu__search search-toggler"><i
+                                            class="bi bi-search"></i></a>
+                                    <a href="#" class="main-menu__cart"><i class="bi bi-cart3"></i></a>
+                                </div>
+                                <div class="main-menu__btn-box">
+                                    <a href="#form" class="main-menu__btn thm-btn"><i class="bi bi-envelope"></i>
+                                        Contact
+                                        Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div>
+        </div>
+
+        <!--Page Header Start-->
+        <section class="page-header">
+            <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/slider-1-2.jpg)">
+            </div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h2>Development & Deployment</h2>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><span>/</span></li>
+                        <li>Services</li>
+                        <li><span>/</span></li>
+                        <li>Development & Deployment</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+
+        <!-- Hero Section Start -->
+        <!--section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Development & Deployment</h1>
+                            <p class="hero-subtitle">Custom mobile solutions for Android and iOS with seamless
+                                deployment and ongoing support</p>
+                            <div class="hero-features">
+                                <div class="hero-feature">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Cross-Platform</span>
+                                </div>
+                                <div class="hero-feature">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Custom Development</span>
+                                </div>
+                                <div class="hero-feature">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>App Store Ready</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-5">
+                    </div>
+                </div>
+            </div>
+        </section>
+        Hero Section End-->
+
+        <!--Service Details Start-->
+        <section class="service-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="service-details__sidebar">
+                            <div class="service-details__categories">
+                                <h4 class="service-details__categories-title">Categories</h4>
+                                <ul class="service-details__categories-list">
+                                    <li><a href="website-development.html">Web Development & Designing</a></li>
+                                    <li><a href="Data Analytics & Power BI.html">Data Analytics & Power BI</a></li>
+                                    <li><a href="Project-marketing.html">Project And Data Management</a></li>
+                                    <li class="current"><a href="Development & Deployement.html">Development &
+                                            Deployment</a></li>
+                                    <li><a href="Artificial Intelligence & Machine Learning.html">Artificial
+                                            Intelligence & Machine Learning</a></li>
+                                </ul>
+                            </div>
+                            <div class="service-details__need-help">
+                                <h4 class="service-details__need-help-title">Need help</h4>
+                                <p class="service-details__need-help-text">Prefer speaking with a human to filling out a
+                                    form? call corporate office and we will connect you with a team member who can help.
+                                </p>
+                                <div class="service-details__need-help-phone-content"
+                                    style="text-align: center; margin-top: 20px;">
+                                    <div
+                                        style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+                                        <div
+                                            style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                                            <i class="bi bi-telephone-fill"
+                                                style="color: #00bfff; font-size: 20px;"></i>
+                                        </div>
+                                    </div>
+                                    <span
+                                        style="display: block; font-size: 14px; color: white; margin-bottom: 5px;">Call
+                                        anytime</span>
+                                    <p style="margin: 0; font-size: 18px; font-weight: 600; color: white;">
+                                        <a href="tel:+919971156014" style="color: white; text-decoration: none;">+91
+                                            8178002165</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="service-details__right">
+                            <div class="service-details__content">
+                                <h3 class="service-details__title"><strong>Development & Deployment by ADR: Custom
+                                        Mobile Solutions for Android and iOS</strong></h3>
+
+                                <div style="margin-bottom: 30px;">
+                                    <p class="service-details__text-1">
+                                        At ADR, we specialize in delivering custom mobile application development and
+                                        deployment services tailored to meet the unique needs of your business. With a
+                                        focus on both Android and iOS platforms, we create dynamic, user-friendly, and
+                                        feature-rich mobile apps that align with your vision and business goals.
+                                    </p>
+
+                                    <p class="service-details__text-1">
+                                        Whether you're a startup looking to launch your first app or an established
+                                        business aiming to enhance customer engagement, ADR provides end-to-end
+                                        solutions that bring your ideas to life.
+                                    </p>
+
+
+                                </div>
+
+                                <h4 class="service-details__subtitle"><strong>Custom Mobile App Development: Tailored
+                                        for Your Success</strong></h4>
+
+                                <div style="margin-bottom: 30px;">
+                                    <p class="service-details__text-2">
+                                        No two businesses are alike, and neither should their mobile applications be. At
+                                        ADR, we work closely with you to understand your specific requirements and
+                                        deliver a mobile app that not only looks great but also functions seamlessly.
+                                    </p>
+
+                                    <p class="service-details__text-2">
+                                        Our development team excels in creating apps that are fully customized, whether
+                                        you're looking for a simple app or a complex solution with advanced features
+                                        like e-commerce integration, location-based services, or real-time
+                                        notifications.
+                                    </p>
+
+                                    <p class="service-details__text-2">
+                                        We handle everything from the initial concept and design to coding, testing, and
+                                        deployment. The "ADR touch" ensures that every app we develop is optimized for
+                                        performance, scalability, and security, offering a smooth and intuitive user
+                                        experience.
+                                    </p>
+                                </div>
+
+                                <h4 class="service-details__subtitle"><strong>Cross-Platform Expertise: Android and iOS
+                                        Development</strong></h4>
+
+                                <div style="margin-bottom: 30px;">
+                                    <p class="service-details__text-2">
+                                        With a rapidly growing mobile user base, it's crucial for businesses to have a
+                                        presence on both major mobile platforms—Android and iOS. ADR specializes in
+                                        developing native and cross-platform apps that function flawlessly on both
+                                        operating
+                                        systems. Our team is skilled in leveraging platform-specific technologies to
+                                        ensure
+                                        that your app performs optimally, no matter which device or OS your customers
+                                        are
+                                        using.
+                                    </p>
+                                    <p class="service-details__text-2">
+                                        Whether you're looking to reach Android users on Google Play or iOS users on the
+                                        App
+                                        Store, ADR ensures that your app meets all platform guidelines and offers a
+                                        consistent, high-quality experience across devices.
+                                    </p>
+
+                                    <h4 class="service-details__subtitle"><strong>Deployment: From Development to
+                                            Launch, We've Got
+                                            You Covered</strong></h4>
+                                    <p class="service-details__text-2">
+                                        At ADR, our services go beyond just development—we handle the entire deployment
+                                        process to ensure your app reaches its intended audience seamlessly. This
+                                        includes
+                                        preparing your app for submission to the Google Play Store and Apple App Store,
+                                        ensuring that it meets all technical and compliance standards. We manage the
+                                        deployment process from end to end, including testing, bug fixing, and
+                                        performance
+                                        optimization, so your app launches smoothly and efficiently.
+                                    </p>
+                                    <p class="service-details__text-2">
+                                        Once deployed, we continue to monitor your app's performance, providing updates
+                                        and
+                                        support as needed to ensure that it remains functional, secure, and up-to-date
+                                        with
+                                        the latest OS requirements.
+                                    </p>
+
+                                    <h4 class="service-details__subtitle"><strong>The ADR Advantage: Innovation Meets
+                                            Reliability
+                                        </strong></h4>
+                                    <p class="service-details__text-2">
+                                        Our "ADR touch" sets us apart by combining technical expertise with creative
+                                        problem-solving. We don't just build apps—we create solutions that enhance user
+                                        experience and drive business results. From the design phase to the final
+                                        launch, we
+                                        focus on delivering high-quality, innovative applications that solve real
+                                        business
+                                        problems while ensuring that the user interface is intuitive and engaging.
+                                    </p>
+
+                                    <div class="service-details__benefits-box">
+                                        <h3 class="service-details__subtitle"
+                                            style="color: #00bfff; font-weight: bold;">Our Development & Deployment
+                                            Services Include:</h3>
+
+                                        <div class="row">
+                                            <div class="col-xl-6">
+                                                <div class="service-details__benefits-single">
+                                                    <div class="service-details__benefits-icon">
+                                                        <span class="bi bi-phone" style="color: #00bfff;"></span>
+                                                    </div>
+                                                    <div class="service-details__benefits-content">
+                                                        <h4>Custom Android & iOS Development</h4>
+                                                        <p>Tailored mobile applications designed to meet your unique
+                                                            business needs and provide a seamless user experience.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="service-details__benefits-single">
+                                                    <div class="service-details__benefits-icon">
+                                                        <span class="bi bi-layers" style="color: #00bfff;"></span>
+                                                    </div>
+                                                    <div class="service-details__benefits-content">
+                                                        <h4>Cross-Platform Solutions</h4>
+                                                        <p>Apps that work flawlessly across both Android and iOS,
+                                                            ensuring a consistent experience for all users.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="service-details__benefits-single">
+                                                    <div class="service-details__benefits-icon">
+                                                        <span class="bi bi-rocket-takeoff"
+                                                            style="color: #00bfff;"></span>
+                                                    </div>
+                                                    <div class="service-details__benefits-content">
+                                                        <h4>End-to-End Deployment</h4>
+                                                        <p>Full deployment services, including app store submissions,
+                                                            compliance checks, and performance monitoring.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="service-details__benefits-single">
+                                                    <div class="service-details__benefits-icon">
+                                                        <span class="bi bi-palette" style="color: #00bfff;"></span>
+                                                    </div>
+                                                    <div class="service-details__benefits-content">
+                                                        <h4>UI/UX Design</h4>
+                                                        <p>Stunning, intuitive designs that engage users and provide an
+                                                            easy-to-navigate experience.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="service-details__benefits-single">
+                                                    <div class="service-details__benefits-icon">
+                                                        <span class="bi bi-shield-check" style="color: #00bfff;"></span>
+                                                    </div>
+                                                    <div class="service-details__benefits-content">
+                                                        <h4>Security & Performance Optimization</h4>
+                                                        <p>Ensuring your app is secure, fast, and scalable to handle
+                                                            growing traffic and usage.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="service-details__benefits-single">
+                                                    <div class="service-details__benefits-icon">
+                                                        <span class="bi bi-tools" style="color: #00bfff;"></span>
+                                                    </div>
+                                                    <div class="service-details__benefits-content">
+                                                        <h4>Ongoing Support & Maintenance</h4>
+                                                        <p>Continuous updates and support to keep your app performing
+                                                            optimally after launch.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <p class="service-details__text-6">When you choose ADR for your mobile app
+                                        development and deployment, you're partnering with a team that understands the
+                                        full lifecycle of app creation. From the initial idea to the final deployment
+                                        and beyond, we ensure that every step is handled with precision, creativity, and
+                                        expertise. Our goal is to deliver mobile applications that not only meet your
+                                        requirements but exceed your expectations, helping you engage users, grow your
+                                        business, and achieve your long-term goals.</p>
+
+                                    <p class="service-details__text-6">Whether you need an Android app, an iOS app, or
+                                        both, ADR is here to help you bring your mobile application vision to life.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!--Service Details End-->
+
+        <!-- Modern Content Section Start -->
+        <section class="modern-content-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section-header text-center">
+                            <h2 class="section-title">Why Choose ADR for Development & Deployment?</h2>
+                            <p class="section-subtitle">Experience the difference that professional mobile development
+                                expertise can make</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-phone-fill"></i>
+                            </div>
+                            <h4 class="feature-title">Native Development</h4>
+                            <p class="feature-text">Platform-specific development for optimal performance and user
+                                experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-layers-fill"></i>
+                            </div>
+                            <h4 class="feature-title">Cross-Platform</h4>
+                            <p class="feature-text">Efficient development for both Android and iOS from a single
+                                codebase.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-shield-check-fill"></i>
+                            </div>
+                            <h4 class="feature-title">Security First</h4>
+                            <p class="feature-text">Built with security best practices and data protection in mind.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-rocket-takeoff-fill"></i>
+                            </div>
+                            <h4 class="feature-title">App Store Ready</h4>
+                            <p class="feature-text">Complete deployment services including store submissions and
+                                compliance.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-tools"></i>
+                            </div>
+                            <h4 class="feature-title">Ongoing Support</h4>
+                            <p class="feature-text">Continuous maintenance and updates to keep your app performing
+                                optimally.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <h4 class="feature-title">Performance Optimized</h4>
+                            <p class="feature-text">Fast, responsive apps that provide excellent user experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-xl-12 text-center">
+                        <div class="cta-section">
+                            <h3 class="cta-title">Ready to Build Your Mobile App?</h3>
+                            <p class="cta-text">Let's discuss how we can bring your mobile app vision to life</p>
+                            <a href="#form" class="cta-button">Get Started Today</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Modern Content Section End-->
+
+        <!--Site Footer Start-->
+        <footer class="site-footer">
+            <div class="site-footer-bg" style="background-image: url(assets/images/backgrounds/site-footer-bg.jpg);">
+            </div>
+            <div class="container">
+                <div class="site-footer__top">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="footer-widget__column footer-widget__about">
+                                <div class="footer-widget__about-text-box">
+                                    <p class="footer-widget__about-text">We work with a passion of taking challenges and
+                                        creating new ones in advertising sector.</p>
+                                </div>
+                                <div class="site-footer__social">
+                                    <a href="#"><i class="bi bi-twitter"></i></a>
+                                    <a href="#"><i class="bi bi-facebook"></i></a>
+                                    <a href="#"><i class="bi bi-pinterest"></i></a>
+                                    <a href="#"><i class="bi bi-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                            <div class="footer-widget__column footer-widget__explore clearfix">
+                                <h3 class="footer-widget__title">Explore</h3>
+                                <ul class="footer-widget__explore-list list-unstyled clearfix">
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="team.html">Our Team</a></li>
+                                    <li><a href="services.html">Services List</a></li>
+                                    <li><a href="projects.html">Projects</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                            <div class="footer-widget__column footer-widget__services clearfix">
+                                <h3 class="footer-widget__title">Services</h3>
+                                <ul class="footer-widget__services-list list-unstyled clearfix">
+                                    <li><a href="website-development.html">Web Development</a></li>
+                                    <li><a href="Data Analytics & Power BI.html">Data Analytics</a></li>
+                                    <li><a href="Project-marketing.html">Project Management</a></li>
+                                    <li><a href="Development & Deployement.html">Development & Deployment</a></li>
+                                    <li><a href="Artificial Intelligence & Machine Learning.html">Artificial Intelligence & Machine Learning </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                            <div class="footer-widget__column footer-widget__contact clearfix">
+                                <h3 class="footer-widget__title">Contact</h3>
+                                <ul class="footer-widget__contact-list list-unstyled clearfix">
+                                    <li>
+                                        <div class="icon">
+                                            <span class="bi bi-envelope-fill"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="mailto:info@adrtechnology.com">info@adrtechnology.com</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="bi bi-geo-alt-fill"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>123 Business Street<br />City, State 12345</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-footer__bottom">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="site-footer__bottom-inner">
+                                <p class="site-footer__bottom-text">© All Copyright 2023 by <a href="#">ADR
+                                        TECHNOLOGY</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Site Footer End-->
+    </div>
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="assets/vendors/odometer/odometer.min.js"></script>
+    <script src="assets/vendors/swiper/swiper.min.js"></script>
+    <script src="assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/countdown/countdown.min.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendors/bwip-js/bwip-js.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/js/zefxa.js"></script>
+</body>
+
+</html>

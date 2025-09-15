@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADR TECHNOLOGY</title>
+  <!-- favicons Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+  <meta name="description" content="ADR" TECHNOLOGY />
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+  <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+  <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+  <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+  <link rel="stylesheet" href="assets/vendors/zefxa-icons/style.css" />
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+  <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" />
+
+  <!-- template styles -->
+  <link rel="stylesheet" href="assets/css/zefxa.css" />
+  <link rel="stylesheet" href="assets/css/zefxa-responsive.css" />
+</head>
+<style>
+  .scroll-offset {
+    position: relative;
+    padding-top: 100px;
+    /* Adjust this to match or slightly exceed your navbar height */
+    margin-top: -100px;
+    /* Negative margin pulls the content back up */
+  }
+
+  html {
+    scroll-padding-top: 180px;
+    scroll-behavior: smooth;
+  }
+
+  .main-menu__logo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .logo-img {
+    width: 220px;
+    /* Adjust the size of the logo */
+    height: 12vh;
+    /* Set height as per your requirement */
+  }
+
+  .stmt {
+    font-size: calc(12vh * 0.8);
+    /* Dynamically adjust the text size to match the logo height */
+    margin-left: 5px;
+    line-height: 12vh;
+  }
+
+  .flex1 {
+    display: flex;
+    align-items: center;
+    /* margin-right:-30px */
+  }
+
+  /* Fix spacing between heading and service blocks */
+  .team-one .section-title {
+    margin-bottom: 80px;
+  }
+
+  .team-one .row {
+    margin-top: 40px;
+  }
+
+  /* Fix alignment for newsletter and contact containers */
+  .footer-widget__newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-widget__newsletter-text {
+    margin-bottom: 0;
+  }
+
+  .footer-widget__newsletter-form {
+    margin-bottom: 0;
+  }
+
+  .footer-widget__Contact-list {
+    margin-top: 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-widget__Contact-list li {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .footer-widget__Contact-list li {
+    display: block;
+  }
+
+  .footer-widget__Contact-list li .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+  }
+
+  .footer-widget__Contact-list li .contact p {
+    margin: 0;
+    font-size: 14px;
+    color: #6c6b6f;
+    line-height: 1.2;
+    text-align: right;
+  }
+
+  .phone-number-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 0;
+    justify-content: flex-end;
+  }
+
+  .phone-number-container i {
+    font-size: 16px;
+    color: var(--zefxa-white);
+    line-height: 1;
+  }
+
+  .phone-number-container a {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--zefxa-white);
+    text-decoration: none;
+    line-height: 1.2;
+  }
+
+  /* Page header spacing */
+  .page-header__inner h2 {
+    margin-bottom: 30px;
+  }
+
+  .page-header__inner .thm-breadcrumb {
+    margin-top: 20px;
+  }
+</style>
+
+<body class="custom-cursor">
+  <div class="custom-cursor__cursor"></div>
+  <div class="custom-cursor__cursor-two"></div>
+
+  <div class="preloader">
+    <div class="preloader__image"></div>
+  </div>
+  <!-- /.preloader -->
+
+  <div class="page-wrapper">
+    <header class="main-header">
+
+      <nav class="main-menu">
+        <div class="main-menu__wrapper">
+          <div class="container">
+            <div class="main-menu__wrapper-inner">
+              <div class="main-menu__left">
+                <div class="main-menu__logo">
+                  <a href="index.html"><img src="assets/images/resources/transparent_background_image.png" alt
+                      style="width: 140px; height: 12vh ;margin-right:-30px;margin-left:-30px" /></a>
+                  <div class="stmt">ADR</div>
+                </div>
+                <div class="main-menu__main-menu-box">
+                  <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                  <ul class="main-menu__list">
+                    <li class="dropdown">
+                      <a href="index.html"><i class="bi bi-house"></i>Home
+                      </a>
+                      <!-- <ul>
+                                                    <li><a
+                                                            href="index.html">Home
+                                                            One</a></li>
+                                                    <li><a
+                                                            href="index2.html">Home
+                                                            Two</a></li>
+                                                    <li><a
+                                                            href="index3.html">Home
+                                                            Three</a></li>
+                                                    <li class="dropdown">
+                                                        <a href="#">One Page
+                                                            Styles</a>
+                                                        <ul>
+                                                            <li><a
+                                                                    href="index-one-page.html">Home
+                                                                    One</a></li>
+                                                            <li><a
+                                                                    href="index2-one-page.html">Home
+                                                                    Two</a></li>
+                                                            <li><a
+                                                                    href="index3-one-page.html">Home
+                                                                    Three</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown">
+                                                        <a href="#">Header
+                                                            Styles</a>
+                                                        <ul>
+                                                            <li><a
+                                                                    href="index.html">Header
+                                                                    One</a></li>
+                                                            <li><a
+                                                                    href="index2.html">Header
+                                                                    Two</a></li>
+                                                            <li><a
+                                                                    href="index3.html">Header
+                                                                    Three</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul> -->
+                    </li>
+                    <!-- <li class="dropdown">
+                        <a href="#"
+                          >Pages
+                          <span class="main-menu-border"></span>
+                        </a>
+                        <ul>
+                          <li><a href="about.html">About</a></li>
+                          <li><a href="team.html">Team</a></li>
+                          <li><a href="team-details.html">Team Details</a></li>
+                          <li><a href="testimonials.html">Testimonials</a></li>
+                          <li><a href="pricing.html">Pricing</a></li>
+                          <li><a href="faq.html">Faq</a></li>
+                          <li><a href="404.html">404 Error</a></li>
+                          <li><a href="coming-soon.html">Coming Soon</a></li>
+                        </ul>
+                      </li> -->
+                    <li class="dropdown">
+                      <a href="#"><i class="bi bi-gear"></i> Services
+                      </a>
+                      <ul>
+                        <!-- <li><a href="services.html">Services</a></li> -->
+                        <li>
+                          <a href="website-development.html">Web Development & Designing</a>
+                        </li>
+                        <li>
+                          <a href="Data Analytics & Power BI.html">Data Analytics & Power BI</a>
+                        </li>
+                        <li>
+                          <a href="Project-marketing.html">Project And Data Management</a>
+                        </li>
+                        <li>
+                          <a href="Development & Deployement.html">Development & Deployement</a>
+                        </li>
+                        <li>
+                          <a href=" Artificial Intelligence & Machine Learning.html">Artificial Intelligence & Machine
+                            Learning</a>
+                        </li>
+                        <!-- <li>
+                            <a href="website-development.html"
+                              >Website Development</a
+                            >
+                          </li> -->
+                        <!-- <li>
+                            <a href="seo-content-writting.html"
+                              >SEO & Content Writting</a
+                            >
+                          </li> -->
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#"><i class="bi bi-diagram-3"></i> Projects
+                      </a>
+                      <ul>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li>
+                          <a href="project-details.html">Project Details</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#"><i class="bi bi-building"></i> Industry
+                      </a>
+                      <ul>
+                        <li><a href="Banking & Financial Services.html">Banking & Financial Services</a></li>
+                        <li><a href="travel Transportation & Hospitatlity.html">Travel Transportation & Hospitatlity</a>
+                        </li>
+                        <li><a href="Insurance.html">Insurance</a></li>
+                        <li><a href="Retail & Consumer Goods.html">Retail & Consumer Goods</a></li>
+                        <li><a href="Social Media Platforms.html">Social Media Platforms</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <!-- <a href="#form"
+                          >Contact
+                          <span class="main-menu-border"></span>
+                        </a> -->
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="main-menu__right">
+                <div class="main-menu__cart-search-box">
+                  <a href="#" class="main-menu__search search-toggler"><i class="bi bi-search"></i></a>
+                  <a href="#" class="main-menu__cart"><i class="bi bi-cart3"></i></a>
+                </div>
+                <div class="main-menu__btn-box">
+                  <a href="#form" class="main-menu__btn thm-btn"><i class="bi bi-envelope"></i> Contact Us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="stricky-header stricked-menu main-menu">
+      <div class="sticky-header__content"></div>
+      <!-- /.sticky-header__content -->
+    </div>
+    <!-- /.stricky-header -->
+
+    <!--Main Slider Start-->
+    <section class="main-slider">
+      <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+                "effect": "fade",
+                "pagination": {
+                "el": "#main-slider-pagination",
+                "type": "bullets",
+                "clickable": true
+                },
+                "navigation": {
+                "nextEl": "#main-slider__swiper-button-next",
+                "prevEl": "#main-slider__swiper-button-prev"
+                },
+                "autoplay": {
+                    "delay": 8000
+                } 
+            }'>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="main-slider__bg" style="
+                  background-image: url(assets/images/backgrounds/slider-1-1.jpg);
+                "></div>
+            <div class="main-slider__shape-bg" style="
+                  background-image: url(assets/images/shapes/main-slider-shape-bg.png);
+                "></div>
+            <div class="main-slider__shape-1 float-bob-y">
+              <img src="assets/images/shapes/main-slider-shape-1.png" alt />
+            </div>
+            <div class="main-slider__shape-2 img-bounce">
+              <img src="assets/images/shapes/main-slider-shape-2.png" alt />
+            </div>
+            <div class="main-slider__shape-3 float-bob-x">
+              <img src="assets/images/shapes/main-slider-shape-3_edited11.png" alt />
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="main-slider__content">
+                    <h2 class="main-slider__title">
+                      ADR <br />
+                      <span>VISION</span> <br />
+                      TECHNOLOGY
+                    </h2>
+                    <!-- Your
+                                            SUGGESTION
+                                            Our INNOVATION -->
+                    <p class="main-slider__text">
+                      We have 5+ year of experience for providing <br />
+                      Software and Development Services.
+                    </p>
+                    <div class="main-slider__btn-box">
+                      <a href="#form" class="main-slider__btn thm-btn">Contact Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="main-slider__bg" style="
+                  background-image: url(assets/images/backgrounds/slider-1-2.jpg);
+                "></div>
+            <div class="main-slider__shape-bg" style="
+                  background-image: url(assets/images/shapes/main-slider-shape-bg.png);
+                "></div>
+            <div class="main-slider__shape-1 float-bob-y">
+              <img src="assets/images/shapes/main-slider-shape-1.png" alt />
+            </div>
+            <div class="main-slider__shape-2 img-bounce">
+              <img src="assets/images/shapes/main-slider-shape-2.png" alt />
+            </div>
+            <div class="main-slider__shape-3 float-bob-x">
+              <img src="assets/images/shapes/main-slider-shape-3_edited11.png" alt />
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="main-slider__content">
+                    <h2 class="main-slider__title">
+                      Your SUGGESTION <br />
+                      <span>Our INNOVATION</span> <br />
+                    </h2>
+                    <p class="main-slider__text">
+                      We have 5+ year of experience for providing <br />
+                      consulting services solutions.
+                    </p>
+                    <div class="main-slider__btn-box">
+                      <a href="#form" class="main-slider__btn thm-btn">Contact Us</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="main-slider__bg" style="
+                  background-image: url(assets/images/backgrounds/slider-1-3.jpg);
+                "></div>
+            <div class="main-slider__shape-bg" style="
+                  background-image: url(assets/images/shapes/main-slider-shape-bg.png);
+                "></div>
+            <div class="main-slider__shape-1 float-bob-y">
+              <img src="assets/images/shapes/main-slider-shape-1.png" alt />
+            </div>
+            <div class="main-slider__shape-2 img-bounce">
+              <img src="assets/images/shapes/main-slider-shape-2.png" alt />
+            </div>
+            <div class="main-slider__shape-3 float-bob-x">
+              <img src="assets/images/shapes/main-slider-shape-3_edited11.png" alt />
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="main-slider__content">
+                    <h2 class="main-slider__title">
+                      We BUILD
+                      <br />
+                      <span>We ASPIRE</span> <br />
+                      We INSPIRE
+                    </h2>
+                    <p class="main-slider__text">
+                      We have 5+ year of experience for providing <br />
+                      consulting services solutions.
+                    </p>
+                    <div class="main-slider__btn-box">
+                      <a href="contact.html" class="main-slider__btn thm-btn">Contact Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-pagination" id="main-slider-pagination"></div>
+        <!-- If we need navigation buttons -->
+      </div>
+    </section>
+    <!--Main Slider End-->
+
+    <!--Services One Start-->
+    <section class="services-one">
+      <h3 class="services-one__big-text">Business</h3>
+      <div class="container">
+        <div class="section-title text-center">
+          <div class="section-title__tagline-box">
+            <div class="section-title__tagline-shape">
+              <img src="assets/images/shapes/section-title-tagline-shape_edited1.png" alt />
+            </div>
+            <span class="section-title__tagline">Services List</span>
+          </div>
+          <h2 class="section-title__title">What We are offering</h2>
+        </div>
+        <div class="row">
+          <!--Services One Single Start-->
+          <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="100ms">
+            <div class="services-one__single">
+              <div class="services-one__img-box">
+                <div class="services-one__img">
+                  <img src="assets/images/services/services-1-1.jpg" alt />
+                </div>
+              </div>
+              <div class="services-one__content-wrap">
+                <div class="services-one__icon">
+                  <i class="bi bi-code-slash"></i>
+                </div>
+                <div class="services-one__content">
+                  <h3 class="services-one__title">
+                    <a href="website-development.html">Web Development & Designing</a>
+                  </h3>
+                  <p class="services-one__text">
+                    We develop the way you suggest us & adding the ADR touch into it.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Services One Single End-->
+          <!--Services One Single Start-->
+          <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="300ms">
+            <div class="services-one__single">
+              <div class="services-one__img-box">
+                <div class="services-one__img">
+                  <img src="assets/images/services/services-1-2.jpg" alt />
+                </div>
+              </div>
+              <div class="services-one__content-wrap">
+                <div class="services-one__icon">
+                  <i class="bi bi-bar-chart-line"></i>
+                </div>
+                <div class="services-one__content">
+                  <h3 class="services-one__title">
+                    <a href="Data Analytics & Power BI.html">Data Analytics & Power BI</a>
+                  </h3>
+                  <p class="services-one__text">
+                    A huge range of data management tools with a logical
+                    building team.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Services One Single End-->
+          <!--Services One Single Start-->
+          <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="600ms">
+            <div class="services-one__single">
+              <div class="services-one__img-box">
+                <div class="services-one__img">
+                  <img src="assets/images/services/services-1-3.jpg" alt />
+                </div>
+              </div>
+              <div class="services-one__content-wrap">
+                <div class="services-one__icon">
+                  <i class="bi bi-diagram-3"></i>
+                </div>
+                <div class="services-one__content">
+                  <h3 class="services-one__title">
+                    <a href="Project-marketing.html">Project And Data Management
+                    </a>
+                  </h3>
+                  <p class="services-one__text">
+                    We Provide Extensive Data Management end-to-end Services.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Services One Single End-->
+          <!--Services One Single Start-->
+          <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="900ms">
+            <div class="services-one__single">
+              <div class="services-one__img-box">
+                <div class="services-one__img">
+                  <img src="assets/images/services/services-1-4.jpg" alt />
+                </div>
+              </div>
+              <div class="services-one__content-wrap">
+                <div class="services-one__icon">
+                  <i class="bi bi-tools"></i>
+                </div>
+                <div class="services-one__content">
+                  <h3 class="services-one__title">
+                    <a href="Development & Deployement.html">Development & Deployement</a>
+                  </h3>
+                  <p class="services-one__text">
+                    We create customised application for both Android & IOS platform.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Services One Single End-->
+        </div>
+      </div>
+    </section>
+    <!--Services One End-->
+
+    <!--About One Start-->
+    <section class="about-one">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5">
+            <div class="about-one__left wow fadeInLeft" data-wow-delay="100ms">
+              <div class="about-one__img">
+                <img src="assets/images/resources/about-one-img-1.jpg" alt />
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-7">
+            <div class="about-one__right wow fadeInRight" data-wow-delay="300ms">
+              <div class="section-title text-left">
+                <div class="section-title__tagline-box">
+                  <div class="section-title__tagline-shape">
+                    <img src="assets/images/shapes/section-title-tagline-shape_edited1.png" alt />
+                  </div>
+                  <span class="section-title__tagline">About Company</span>
+                </div>
+                <h2 class="section-title__title">
+                  We have been consistently delivering digital Innovation to various sector and shaping the future of
+                  technology.
+                </h2>
+              </div>
+              <p class="about-one__big-text">
+                Be invite you to utilize our unique expertise to tackle various business challenges, elevate operations
+                and enable growth.
+              </p>
+              <p class="about-one__text">
+                Our vision is to mandate an idea of customers from an imagination bald into a reality through technology
+                with ADR touch.
+              </p>
+              <ul class="about-one__points list-unstyled">
+                <li>
+                  <div class="icon">
+                    <i class="bi bi-trophy"></i>
+                  </div>
+                  <h4>
+                    Best Quality <br />
+                    Project
+                  </h4>
+                </li>
+                <li>
+                  <div class="icon">
+                    <i class="bi bi-people"></i>
+                  </div>
+                  <h4>
+                    Best Management <br />
+                    Skills
+                  </h4>
+                </li>
+              </ul>
+              <div class="about-one__btn-box">
+                <a href="#form" class="about-one__btn thm-btn">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--About One End-->
+
+    <!--Team One Start-->
+    <section class="team-one">
+      <div class="team-one__bg-box">
+        <div class="team-one__bg" style="
+              background-image: url(assets/images/backgrounds/team-one-bg.jpg);
+            "></div>
+      </div>
+      <div class="container">
+        <div class="section-title text-center">
+          <div class="section-title__tagline-box">
+            <div class="section-title__tagline-shape">
+              <img src="assets/images/shapes/section-title-tagline-shape_edited1.png" alt />
+            </div>
+            <span class="section-title__tagline">Our Vision</span>
+          </div>
+          <h2 class="section-title__title">New Generation Technologies.</h2>
+        </div>
+        <div class="row">
+          <!--Team One Single Start-->
+          <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="100ms">
+            <div class="team-one__single">
+              <div class="team-one__img-box">
+                <div class="team-one__img">
+                  <img src="/ADR/assets/images/team/team- 1-1.jpg" alt />
+                </div>
+              </div>
+              <div class="team-one__content-inner">
+                <div class="team-one__content">
+                  <h3 class="team-one__name">
+                    <a href="team-details.html">Artificial Intelligence. </a>
+                  </h3>
+                  <p class="team-one__sub-title"></p>
+                  <div class="team-one__social">
+                    <a href="team-details.html"><i class="bi bi-twitter"></i></a>
+                    <a href="team-details.html"><i class="bi bi-facebook"></i></a>
+                    <a href="team-details.html"><i class="bi bi-google"></i></a>
+                    <a href="team-details.html"><i class="bi bi-pinterest"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Team One Single End-->
+          <!--Team One Single Start-->
+          <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+            <div class="team-one__single">
+              <div class="team-one__img-box">
+                <div class="team-one__img">
+                  <img src="assets/images/team/team-1-2.jpeg" alt />
+                </div>
+              </div>
+              <div class="team-one__content-inner">
+                <div class="team-one__content">
+                  <h3 class="team-one__name">
+                    <a href="team-details.html">Machine Learning</a>
+                  </h3>
+                  <p class="team-one__sub-title"></p>
+                  <div class="team-one__social">
+                    <a href="team-details.html"><i class="bi bi-twitter"></i></a>
+                    <a href="team-details.html"><i class="bi bi-facebook"></i></a>
+                    <a href="team-details.html"><i class="bi bi-google"></i></a>
+                    <a href="team-details.html"><i class="bi bi-pinterest"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Team One Single End-->
+          <!--Team One Single Start-->
+          <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-delay="300ms">
+            <div class="team-one__single">
+              <div class="team-one__img-box">
+                <div class="team-one__img">
+                  <img src="assets/images/team/team-1-3.jpg" alt />
+                </div>
+              </div>
+              <div class="team-one__content-inner">
+                <div class="team-one__content">
+                  <h3 class="team-one__name">
+                    <a href="team-details.html">Cloud Services. </a>
+                  </h3>
+                  <p class="team-one__sub-title"></p>
+                  <div class="team-one__social">
+                    <a href="team-details.html"><i class="bi bi-twitter"></i></a>
+                    <a href="team-details.html"><i class="bi bi-facebook"></i></a>
+                    <a href="team-details.html"><i class="bi bi-google"></i></a>
+                    <a href="team-details.html"><i class="bi bi-pinterest"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Team One Single End-->
+        </div>
+      </div>
+    </section>
+    <!--Team One End-->
+
+    <!--Contact One Start-->
+    <section class="contact-one" class="scroll-offset" id="form">
+      <div class="contact-one__bg" style="
+            background-image: url(assets/images/backgrounds/contact-one-bg.jpg);
+          "></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4 col-lg-5">
+            <div class="contact-one__left wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
+              <div class="contact-one__from-shape-1">
+                <img src="assets/images/shapes/contact-one-form-shape-1.png" alt />
+              </div>
+              <form class="contact-form-validated contact-one__form" action="assets/inc/sendemail.php" method="post"
+                novalidate="novalidate">
+                <div class="row">
+                  <div class="col-xl-12">
+                    <div class="contact-one__input-box">
+                      <input type="text" name="username" placeholder="Your Name" required />
+                      <div class="contact-one__input-box-icon">
+                        <i class="bi bi-person"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12">
+                    <div class="contact-one__input-box">
+                      <input type="email" name="email" placeholder="Email Address" required />
+                      <div class="contact-one__input-box-icon">
+                        <i class="bi bi-envelope"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12">
+                    <div class="contact-one__input-box">
+                      <input type="text" name="phone" placeholder="Phone Number" required />
+                      <div class="contact-one__input-box-icon">
+                        <i class="bi bi-telephone"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12">
+                    <div class="contact-one__input-box">
+                      <div class="contact-one__input-box-icon">
+                        <i class="bi bi-ui-checks-grid"></i>
+                      </div>
+                      <div class="select-box">
+                        <select class="wide">
+                          <option data-display="Select Subject">
+                            Subject
+                          </option>
+                          <option value="1">Web Development & Designing</option>
+                          <option value="2">Data Analytics & Power BI</option>
+                          <option value="3">Project And Data Management</option>
+                          <option value="4">Development & Deployement</option>
+                          <option value="4">Artificial Intelligence</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12">
+                    <div class="contact-one__btn-box">
+                      <button type="submit" class="thm-btn contact-one__btn">
+                        Submit Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="result"></div>
+            </div>
+          </div>
+          <div class="col-xl-8 col-lg-7">
+            <div class="contact-one__right">
+              <div class="contact-one__video-link wow zoomIn" data-wow-delay="100ms" data-wow-duration="3500ms">
+
+                <h4 class="contact-one__video-text">
+                  Better Digital Marketing Solution <br />
+                  & Services Fingertips
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Contact One End-->
+
+    <!--Sliding Text Start-->
+    <section class="sliding-text">
+      <div class="sliding-text__inner">
+        <ul class="sliding-text__list marquee_mode-1 list-unstyled">
+          <li>
+            <div class="icon">
+              <img src="assets/images/resources/sliding-text-img-1.png" alt />
+            </div>
+            <p>Web Development & Designing</p>
+          </li>
+          <li>
+            <div class="icon">
+              <img src="assets/images/resources/sliding-text-img-1.png" alt />
+            </div>
+            <p>Data Analytics & Power BI</p>
+          </li>
+          <li>
+            <div class="icon">
+              <img src="assets/images/resources/sliding-text-img-1.png" alt />
+            </div>
+            <p>Project And Data Management</p>
+          </li>
+          <li>
+            <div class="icon">
+              <img src="assets/images/resources/sliding-text-img-1.png" alt />
+            </div>
+            <p>Development & Deployement</p>
+          </li>
+          <!-- <li>
+              <div class="icon">
+                <img src="assets/images/resources/sliding-text-img-1.png" alt />
+              </div>
+              <p>It Consulting</p>
+            </li> -->
+          <!-- <li>
+              <div class="icon">
+                <img src="assets/images/resources/sliding-text-img-1.png" alt />
+              </div>
+              <p>Seo Optimization</p>
+            </li> -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- <section class="process-one">
+                <div class="container">
+                    <div class="section-title text-center">
+                        <div class="section-title__tagline-box">
+                            <div class="section-title__tagline-shape">
+                                <img
+                                    src="assets/images/shapes/section-title-tagline-shape.png"
+                                    alt>
+                            </div>
+                            <span class="section-title__tagline">Simple
+                                Process</span>
+                        </div>
+                        <h2 class="section-title__title">4 Easy Working
+                            Steps</h2>
+                    </div>
+                    <div class="row">
+                       
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft"
+                            data-wow-delay="100ms">
+                            <div class="process-one__single-inner">
+                                <div class="process-one__single-shape"></div>
+                                <div class="process-one__single">
+                                    <div class="process-one__single-bg"
+                                        style="background-image: url(assets/images/resources/process-one-single-bg.jpg);">
+                                    </div>
+                                    <div class="process-one__icon">
+                                        <i class="bi bi-code-slash"></i>
+                                    </div>
+                                    <h3 class="process-one__title">Web
+                                        Development</h3>
+                                    <p class="process-one__text">There’re many
+                                        variation of passage of avilale.</p>
+                                    <div class="process-one__count"></div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft"
+                            data-wow-delay="200ms">
+                            <div class="process-one__single-inner">
+                                <div class="process-one__single-shape"></div>
+                                <div class="process-one__single">
+                                    <div class="process-one__single-bg"
+                                        style="background-image: url(assets/images/resources/process-one-single-bg.jpg);">
+                                    </div>
+                                    <div class="process-one__icon">
+                                        <i class="bi bi-palette"></i>
+                                    </div>
+                                    <h3 class="process-one__title">Industry
+                                        Design</h3>
+                                    <p class="process-one__text">There’re many
+                                        variation of passage of avilale.</p>
+                                    <div class="process-one__count"></div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInRight"
+                            data-wow-delay="300ms">
+                            <div class="process-one__single-inner">
+                                <div class="process-one__single-shape"></div>
+                                <div class="process-one__single">
+                                    <div class="process-one__single-bg"
+                                        style="background-image: url(assets/images/resources/process-one-single-bg.jpg);">
+                                    </div>
+                                    <div class="process-one__icon">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                    <h3 class="process-one__title">Satisfied
+                                        Design</h3>
+                                    <p class="process-one__text">There’re many
+                                        variation of passage of avilale.</p>
+                                    <div class="process-one__count"></div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInRight"
+                            data-wow-delay="400ms">
+                            <div class="process-one__single-inner">
+                                <div class="process-one__single-shape"></div>
+                                <div class="process-one__single">
+                                    <div class="process-one__single-bg"
+                                        style="background-image: url(assets/images/resources/process-one-single-bg.jpg);">
+                                    </div>
+                                    <div class="process-one__icon">
+                                        <i class="bi bi-megaphone"></i>
+                                    </div>
+                                    <h3 class="process-one__title">Digital
+                                        Strategy</h3>
+                                    <p class="process-one__text">There’re many
+                                        variation of passage of avilale.</p>
+                                    <div class="process-one__count"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section> -->
+    <!--Process One End-->
+
+    <!--Why We Are Start-->
+    <section class="why-we-are">
+      <div class="why-we-are__bg" style="
+            background-image: url(assets/images/backgrounds/why-we-are-bg.jpg);
+          "></div>
+      <div class="why-we-are__bg-shape" style="
+            background-image: url(assets/images/shapes/why-we-are-bg-shape.png);
+          "></div>
+      <div class="why-we-are__shape-1">
+        <img src="assets/images/shapes/why-we-are-shape-1.png" alt />
+      </div>
+      <div class="why-we-are__shape-2">
+        <img src="assets/images/shapes/why-we-are-shape-2_edited2.png" alt />
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="why-we-are__left">
+              <div class="section-title text-center">
+                <div class="section-title__tagline-box">
+                  <div class="section-title__tagline-shape">
+                    <img src="assets/images/shapes/section-title-tagline-shape_edited1.png" alt />
+                  </div>
+                  <span class="section-title__tagline">Who We Are</span>
+                </div>
+                <h2 class="section-title__title">
+                  Work that Meet your <br />
+                  Expectations
+                </h2>
+              </div>
+              <p class="why-we-are__text text-center"
+                style="max-width: 800px; margin: 0 auto 40px auto; color: #ffffff; font-weight: 500;">
+                There are many variations of available but the majority have
+                suffered. Alteration in some form, lipsum is simply free text
+                by injected humou or randomised words even believable.
+              </p>
+              <div class="row">
+                <div class="col-xl-6">
+                  <div class="why-we-are__points-single"
+                    style="text-align: center; padding: 30px; margin-bottom: 30px;">
+                    <div class="icon" style="margin-bottom: 20px;">
+                      <i class="bi bi-graph-up" style="font-size: 48px; color: var(--zefxa-base);"></i>
+                    </div>
+                    <div class="text">
+                      <h3 style="margin-bottom: 15px; color: #ffffff; font-weight: 600;">Boost Your Sale</h3>
+                      <p style="color: #e0e0e0; line-height: 1.6;">
+                        Unlock the full potential of your business with data-driven strategies, innovative marketing
+                        solutions, and
+                        cutting-edge technology. We help you reach the right audience, increase conversions, and
+                        maximize ROI to
+                        accelerate your growth.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6">
+                  <div class="why-we-are__points-single"
+                    style="text-align: center; padding: 30px; margin-bottom: 30px;">
+                    <div class="icon" style="margin-bottom: 20px;">
+                      <i class="bi bi-bar-chart" style="font-size: 48px; color: var(--zefxa-base);"></i>
+                    </div>
+                    <div class="text">
+                      <h3 style="margin-bottom: 15px; color: #ffffff; font-weight: 600;">Data & Analysis</h3>
+                      <p style="color: #e0e0e0; line-height: 1.6;">
+                        Transform raw data into actionable insights. Our advanced analytics solutions help you track
+                        performance, identify opportunities, and make smarter decisions that drive business success.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Why We Are End-->
+
+    <!--Testimonial One Start-->
+    <section class="testimonial-one">
+      <div class="container">
+        <div class="testimonial-one__inner">
+          <div class="testimonial-one__top">
+            <div class="section-title text-left">
+              <div class="section-title__tagline-box">
+                <div class="section-title__tagline-shape">
+                  <img src="assets/images/shapes/section-title-tagline-shape_edited1.png" alt />
+                </div>
+                <span class="section-title__tagline">Our Testimonials</span>
+              </div>
+              <h2 class="section-title__title">
+                What they’re talking <br />
+                about us
+              </h2>
+            </div>
+          </div>
+          <div class="testimonial-one__main-content">
+            <div class="swiper-container" id="testimonial-one__carousel">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="testimonial-one__main-content-inner">
+                    <div class="row">
+                      <div class="col-xl-7">
+                        <div class="testimonial-one__left">
+                          <div class="testimonial-one__img-box">
+                            <img src="assets/images/testimonial/testimonial-one-img-1.jpg" alt />
+                            <div class="testimonial-one__shape-1">
+                              <img src="assets/images/shapes/testimonial-one-shape-edited11.png" alt />
+                            </div>
+                            <div class="testimonial-one__shape-2">
+                              <img src="assets/images/shapes/testimonial-one-shape-2_edited1.jpg" alt />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-5">
+                        <div class="testimonial-one__right">
+                          <div class="testimonial-one__single">
+                            <div class="testimonial-one__client-info-box">
+                              <div class="testimonial-one__client-img">
+                                <img src="assets/images/testimonial/testimonial-1-1.jpg" alt />
+                              </div>
+                              <div class="testimonial-one__client-content">
+                                <h5 class="testimonial-one__client-name">
+                                  <i class="bi bi-person-circle"></i> KMR ENVIRO ENGINEERING
+                                </h5>
+                                <p class="testimonial-one__client-sub-title">
+                                  <i class="bi bi-briefcase"></i> Environmental Engineering
+                                </p>
+                              </div>
+                            </div>
+                            <p class="testimonial-one__text">
+                              We are privileged to workwith hundreds of future
+                              this business,including many of the world's top
+                              software,and brands business
+                            </p>
+                            <div class="testimonial-one__quote">
+                              <i class="bi bi-quote"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.swiper-slide -->
+                <div class="swiper-slide">
+                  <div class="testimonial-one__main-content-inner">
+                    <div class="row">
+                      <div class="col-xl-7">
+                        <div class="testimonial-one__left">
+                          <div class="testimonial-one__img-box">
+                            <img src="assets/images/testimonial/testimonial-one-img-1.jpg" alt />
+                            <div class="testimonial-one__shape-1">
+                              <img src="assets/images/shapes/testimonial-one-shape-edited11.png" alt />
+                            </div>
+                            <div class="testimonial-one__shape-2">
+                              <img src="assets/images/shapes/testimonial-one-shape-2_edited1.jpg" alt />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-5">
+                        <div class="testimonial-one__right">
+                          <div class="testimonial-one__single">
+                            <div class="testimonial-one__client-info-box">
+                              <div class="testimonial-one__client-img">
+                                <img src="assets/images/testimonial/testimonial-1-2.jpg" alt />
+                              </div>
+                              <div class="testimonial-one__client-content">
+                                <h5 class="testimonial-one__client-name">
+                                  <i class="bi bi-person-circle"></i> NAMAN TRANSPORT
+                                </h5>
+                                <p class="testimonial-one__client-sub-title">
+                                  <i class="bi bi-briefcase"></i> Web Designer
+                                </p>
+                              </div>
+                            </div>
+                            <p class="testimonial-one__text">
+                              We are privileged to work with hundreds of future-forward businesses,
+                              including some of the world's top software companies and iconic brands.
+                              Our collaboration has consistently resulted in transformative growth and success. The
+                              trust and partnership with our clients are the foundation of everything we do.
+                            </p>
+                            <div class="testimonial-one__quote">
+                              <i class="bi bi-quote"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.swiper-slide -->
+                <div class="swiper-slide">
+                  <div class="testimonial-one__main-content-inner">
+                    <div class="row">
+                      <div class="col-xl-7">
+                        <div class="testimonial-one__left">
+                          <div class="testimonial-one__img-box">
+                            <img src="assets/images/testimonial/testimonial-one-img-1.jpg" alt />
+                            <div class="testimonial-one__shape-1">
+                              <img src="assets/images/shapes/testimonial-one-shape-edited11.png" alt />
+                            </div>
+                            <div class="testimonial-one__shape-2">
+                              <img src="assets/images/shapes/testimonial-one-shape-2_edited1.jpg" alt />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-5">
+                        <div class="testimonial-one__right">
+                          <div class="testimonial-one__single">
+                            <div class="testimonial-one__client-info-box">
+                              <div class="testimonial-one__client-img">
+                                <img src="assets/images/testimonial/testimonial-1-3.jpg" alt />
+                              </div>
+                              <div class="testimonial-one__client-content">
+                                <h5 class="testimonial-one__client-name">
+                                  GOVINDAM ENVIRO ENGINEERING
+                                </h5>
+                                <p class="testimonial-one__client-sub-title">
+                                  IT Services
+                                </p>
+                              </div>
+                            </div>
+                            <p class="testimonial-one__text">
+                              We take great pride in working with some of the world's most influential software
+                              companies and brands.
+                              Our collaborative approach has consistently led to impressive results,
+                              helping these businesses thrive in an ever-evolving market.
+                            </p>
+                            <div class="testimonial-one__quote">
+                              <i class="bi bi-quote"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.swiper-slide -->
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-one__thumb-box">
+            <div class="swiper-container" id="testimonial-one__thumb">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="testimonial-one__img-holder-box">
+                    <div class="testimonial-one__img-holder">
+                      <img src="assets/images/testimonial/testimonial-thumb-1-1.jpg" alt />
+                    </div>
+                  </div>
+                </div>
+                <!-- /.swiper-slide -->
+                <div class="swiper-slide middle">
+                  <div class="testimonial-one__img-holder-box">
+                    <div class="testimonial-one__img-holder">
+                      <img src="assets/images/testimonial/testimonial-thumb-1-2.jpg" alt />
+                    </div>
+                  </div>
+                </div>
+                <!-- /.swiper-slide -->
+                <div class="swiper-slide">
+                  <div class="testimonial-one__img-holder-box">
+                    <div class="testimonial-one__img-holder">
+                      <img src="assets/images/testimonial/testimonial-thumb-1-3.jpg" alt />
+                    </div>
+                  </div>
+                </div>
+                <!-- /.swiper-slide -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Testimonial One End-->
+
+    <!--Blog One Start -->
+    <section class="blog-one">
+      <div class="blog-one__bg float-bob-x" style="
+            background-image: url(assets/images/backgrounds/blog-one-bg.jpg);
+          "></div>
+      <div class="blog-one__shape-1">
+        <img src="assets/images/shapes/blog-one-shape-1.png" alt />
+      </div>
+      <div class="blog-one__shape-2">
+        <img src="assets/images/shapes/blog-one-shape-2.png" alt />
+      </div>
+      <div class="container">
+        <div class="section-title text-center">
+          <div class="section-title__tagline-box">
+            <div class="section-title__tagline-shape">
+              <img src="assets/images/shapes/section-title-tagline-shape_edited1.png" alt />
+            </div>
+            <span class="section-title__tagline">Our Blog</span>
+          </div>
+          <h2 class="section-title__title">Business & Reliable News Blog</h2>
+        </div>
+        <div class="row">
+          <!--Blog One Single Start-->
+          <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="100ms">
+            <div class="blog-one__single">
+              <div class="blog-one__img-box">
+                <div class="blog-one__img">
+                  <img src="assets/images/blog/blog-1-2.jpg" alt />
+                </div>
+              </div>
+              <div class="blog-one__content">
+                <ul class="blog-one__meta list-unstyled">
+                  <li>
+                    <a href="#"><i class="bi bi-calendar-date"></i> 20 Oct 2024</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-chat-dots"></i> 02 Comment</a>
+                  </li>
+                </ul>
+                <h3 class="blog-one__title">
+                  <a href="blog.html">Working together, ideas come to
+                    life</a>
+                </h3>
+                <p class="blog-one__text">
+                  when people work together, they can bring creative ideas to fruition.
+                  It emphasizes the power of teamwork .
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Blog One Single End-->
+          <!--Blog One Single Start-->
+          <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+            <div class="blog-one__single">
+              <div class="blog-one__img-box">
+                <div class="blog-one__img">
+                  <img src="assets/images/blog/blog-1-3.jpg" alt />
+                </div>
+              </div>
+              <div class="blog-one__content">
+                <ul class="blog-one__meta list-unstyled">
+                  <li>
+                    <a href="#"><i class="bi bi-calendar-date"></i> 1 Jan 2024</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-chat-dots"></i> 05 Comment</a>
+                  </li>
+                </ul>
+                <h3 class="blog-one__title">
+                  <a href="blog.html">Five ways that can develop your business</a>
+                </h3>
+                <p class="blog-one__text">
+                  Enhance your website and social media to attract
+                  new customers and increase brand visibility.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Blog One Single End-->
+          <!--Blog One Single Start-->
+          <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-delay="300ms">
+            <div class="blog-one__single">
+              <div class="blog-one__img-box">
+                <div class="blog-one__img">
+                  <img src="assets/images/blog/blog-1-1.jpg" alt />
+                </div>
+              </div>
+              <div class="blog-one__content">
+                <ul class="blog-one__meta list-unstyled">
+                  <li>
+                    <a href="#"><i class="bi bi-calendar-date"></i> 14 Mar 2025</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-chat-dots"></i> 06 Comment</a>
+                  </li>
+                </ul>
+                <h3 class="blog-one__title">
+                  <a href="blog.html">Get few solutions to make a best website</a>
+                </h3>
+                <p class="blog-one__text">
+                  Business is the process of earning a
+                  living through the buying and selling of goods and services.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Blog One Single End-->
+        </div>
+      </div>
+    </section>
+    <!--Blog One End-->
+
+    <!--CTA One Start-->
+    <section class="cta-one">
+      <div class="cta-one__bg" style="
+            background-image: url(assets/images/backgrounds/cta-one-bg.jpg);
+          "></div>
+      <div class="container">
+        <div class="row">
+          <div class="cta-one__inner">
+            <h3 class="cta-one__title">
+              Let's discuss about how we can help <br />
+              make your business better
+            </h3>
+            <div class="cta-one__btn-box">
+              <a href="about.html" class="cta-one__btn thm-btn">Let's Start</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--CTA One End-->
+
+    <!--Site Footer Start-->
+    <footer class="site-footer">
+      <div class="site-footer__bg" style="
+            background-image: url(assets/images/backgrounds/site-footer-bg.jpg);
+          "></div>
+      <div class="site-footer__top">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+              <div class="footer-widget__column footer-widget__about">
+                <div class="footer-widget__logo flex1">
+                  <a href="index.html"><img src="assets/images/resources/transparent_background_image.png" alt
+                      style="width: 140px; height: 12vh;margin-right:-30px;margin-left:-30px " />
+                  </a>
+                  <div class="stmt">ADR</div>
+                </div>
+                <p class="footer-widget__about-text">
+                  We work with a passion of taking challenges and creating new ones in advertising sector.
+                </p>
+                <div class="site-footer__social-box">
+                  <h3 class="site-footer__social-title">Follow On</h3>
+                  <div class="site-footer__social">
+                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-pinterest"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+              <div class="footer-widget__column footer-widget__link">
+                <div class="footer-widget__title-box">
+                  <h3 class="footer-widget__title">Useful Link</h3>
+                </div>
+                <ul class="footer-widget__link-list list-unstyled">
+                  <li><a href="team.html">Meet the Team</a></li>
+                  <li><a href="services.html">Services List</a></li>
+                  <li><a href="about.html">Simple Process</a></li>
+                  <li><a href="blog.html">Latest News</a></li>
+                  <li><a href="#form">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+              <div class="footer-widget__column footer-widget__newsletter">
+                <div class="footer-widget__title-box">
+                  <h3 class="footer-widget__title"><i class="bi bi-envelope"></i> Newsletter</h3>
+                </div>
+                <p class="footer-widget__newsletter-text">
+                  Subscribe to our newsletter & keep up with all the latest
+                  Zefxa.
+                </p>
+                <form class="footer-widget__newsletter-form mc-form" data-url="MC_FORM_URL" novalidate="novalidate">
+                  <div class="footer-widget__newsletter-form-input-box">
+                    <input type="email" placeholder="Enter Email Address" name="EMAIL" />
+                    <button type="submit" class="footer-widget__newsletter-btn">
+                      <i class="bi bi-send"></i>
+                    </button>
+                  </div>
+                </form>
+                <div class="mc-form__response"></div>
+                <ul class="footer-widget__Contact-list list-unstyled">
+                  <li>
+                    <div class="contact">
+                      <p>Call Anytime</p>
+                      <div class="phone-number-container">
+                        <i class="bi bi-telephone-fill"></i>
+                        <a href="tel:+918178002165 ,91 9582217686">+91 8178002165 ,
+                          + 91 9582217686</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="site-footer__bottom-inner">
+                <p class="site-footer__bottom-text">
+                  Copyright © 2024
+                  <a href="#">ADR.</a> All Rights Reserved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Site Footer End-->
+  </div>
+  <!-- /.page-wrapper -->
+
+  <div class="mobile-nav__wrapper">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <!-- /.mobile-nav__overlay -->
+    <div class="mobile-nav__content">
+      <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+      <div class="flex1">
+        <div class="logo-box">
+          <a href="index.html" aria-label="logo image"><img
+              src="assets/images/resources/transparent_background_image.png" alt
+              style="width: 140px;margin-top:35px ;height: 12vh;margin-right:-30px;margin-left:-30px " /></a>
+        </div>
+        <div class="stmt">ADR</div>
+      </div>
+      <!-- /.logo-box -->
+      <div class="mobile-nav__container"></div>
+      <!-- /.mobile-nav__container -->
+
+      <ul class="mobile-nav__contact list-unstyled">
+        <li>
+          <i class="fa fa-envelope"></i>
+          <a href="mailto:needhelp@packageName__.com">needhelp@zefxa.com</a>
+        </li>
+        <li>
+          <i class="fa fa-phone-alt"></i>
+          <a href="tel:+918178002165, +919582217686">+91 8178002165 , +91 95822 17686</a>
+        </li>
+      </ul>
+      <!-- /.mobile-nav__contact -->
+      <div class="mobile-nav__top">
+        <div class="mobile-nav__social">
+          <a href="#" class="fab fa-twitter"></a>
+          <a href="#" class="fab fa-facebook-square"></a>
+          <a href="#" class="fab fa-pinterest-p"></a>
+          <a href="#" class="fab fa-instagram"></a>
+        </div>
+        <!-- /.mobile-nav__social -->
+      </div>
+      <!-- /.mobile-nav__top -->
+    </div>
+    <!-- /.mobile-nav__content -->
+  </div>
+  <!-- /.mobile-nav__wrapper -->
+
+  <div class="search-popup">
+    <div class="search-popup__overlay search-toggler"></div>
+    <!-- /.search-popup__overlay -->
+    <div class="search-popup__content">
+      <form action="#">
+        <label for="search" class="sr-only">search here</label>
+        <!-- /.sr-only -->
+        <input type="text" id="search" placeholder="Search Here..." />
+        <button type="submit" aria-label="search submit" class="thm-btn">
+          <i class="icon-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+    <!-- /.search-popup__content -->
+  </div>
+  <!-- /.search-popup -->
+
+  <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="bi bi-chevron-up"></i></a>
+
+  <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+  <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+  <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+  <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+  <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+  <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+  <script src="assets/vendors/odometer/odometer.min.js"></script>
+  <script src="assets/vendors/swiper/swiper.min.js"></script>
+  <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+  <script src="assets/vendors/wow/wow.js"></script>
+  <script src="assets/vendors/isotope/isotope.js"></script>
+  <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+  <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="assets/vendors/marque/marquee.min.js"></script>
+  <script src="assets/vendors/countdown/countdown.min.js"></script>
+
+  <!-- template js -->
+  <script src="assets/js/zefxa.js"></script>
+</body>
+
+</html>

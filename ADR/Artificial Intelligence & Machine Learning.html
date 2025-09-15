@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artificial Intelligence & Machine Learning - ADR TECHNOLOGY</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="ADR TECHNOLOGY - Artificial Intelligence & Machine Learning Services" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/zefxa-icons/style.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="assets/css/zefxa.css" />
+    <link rel="stylesheet" href="assets/css/zefxa-responsive.css" />
+
+    <style>
+        .scroll-offset {
+            position: relative;
+            padding-top: 100px;
+            margin-top: -100px;
+        }
+
+        html {
+            scroll-padding-top: 180px;
+            scroll-behavior: smooth;
+        }
+
+        .main-menu__logo {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .logo-img {
+            width: 220px;
+            height: 12vh;
+        }
+
+        .stmt {
+            font-size: calc(12vh * 0.8);
+            margin-left: 5px;
+            line-height: 12vh;
+        }
+
+        .flex1 {
+            display: flex;
+            align-items: center;
+        }
+
+        /* AI/ML specific color scheme */
+        .ai-primary-color {
+            color: #00bfff;
+        }
+
+        .ai-gradient {
+            background: linear-gradient(135deg, #00bfff 0%, #0066cc 100%);
+        }
+
+        /* Full-width content styling */
+        .service-details__content {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .service-details__text-1,
+        .service-details__text-2,
+        .service-details__text-3,
+        .service-details__text-4,
+        .service-details__text-5,
+        .service-details__text-6 {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #333;
+            text-align: justify;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        .service-details__content .row {
+            margin-bottom: 40px;
+        }
+
+        .service-details__content .col-lg-6 {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-left: 4px solid #00bfff;
+        }
+
+        .service-details__content .col-lg-6:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-details__title {
+            font-size: 42px;
+            margin: 0 0 30px;
+            color: #333;
+            font-weight: 700;
+            line-height: 1.2;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .service-details__subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            color: #6c5ce7;
+            margin: 30px 0 20px 0;
+            border-left: 4px solid #00bfff;
+            padding-left: 15px;
+        }
+
+        .service-details__benefits-box {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border: 1px solid #e9ecef;
+        }
+
+        .service-details__benefits-single {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e9ecef;
+        }
+
+        .service-details__benefits-single .service-details__benefits-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 0 10px;
+        }
+
+        .service-details__benefits-single .service-details__benefits-content h4 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .service-details__benefits-single .service-details__benefits-content p {
+            flex: 1;
+            margin: 0;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .service-details__benefits-icon {
+            font-size: 48px;
+            color: #00bfff;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .service-details__benefits-single:hover .service-details__benefits-icon {
+            transform: scale(1.1);
+            color: #0099cc;
+        }
+
+        .service-details__benefits-single:hover {
+            transform: translateY(-5px);
+        }
+
+        .modern-content-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 100px 0 80px;
+            margin: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .modern-content-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+            padding: 0 15px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #2a2a2a;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            padding: 0 20px;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid #eee;
+            margin: 15px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            color: #0099cc;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            color: #00bfff;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-text {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            padding: 50px;
+            border-radius: 20px;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .cta-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #6c5ce7;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            color: #6c5ce7;
+        }
+
+        /* Sidebar styling */
+        .service-details__sidebar {
+            position: sticky;
+            top: 120px;
+            margin-bottom: 30px;
+        }
+
+        .service-details__categories {
+            background: #2a2a2a;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-details__categories-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00bfff;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .service-details__categories-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-details__categories-list li {
+            margin-bottom: 10px;
+        }
+
+        .service-details__categories-list li a {
+            display: block;
+            padding: 12px 15px;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: #3a3a3a;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .service-details__categories-list li a:hover {
+            background: #4a4a4a;
+            color: #ffffff;
+            transform: translateX(5px);
+        }
+
+        .service-details__categories-list li.current a {
+            background: #00bfff;
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+            font-weight: 500;
+        }
+
+        .service-details__need-help-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-details__need-help-text {
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-details__need-help-phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            background: #3a3a3a;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .service-details__need-help-phone-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .service-details__need-help-phone-icon span {
+            color: #00bfff;
+            font-size: 20px;
+        }
+
+        .service-details__need-help-phone-content {
+            text-align: center;
+        }
+
+        .service-details__need-help-phone-content span {
+            display: block;
+            font-size: 14px;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .service-details__need-help-phone-content p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .service-details__need-help-phone-content p a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .service-details__need-help-phone-content p a:hover {
+            color: #6c5ce7;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .service-details__sidebar {
+                position: static;
+                margin-bottom: 40px;
+            }
+        }
+
+        /* Page header spacing */
+        .page-header__inner h2 {
+            margin-bottom: 30px;
+        }
+
+        .page-header__inner .thm-breadcrumb {
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body class="custom-cursor">
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+    <div class="page-wrapper">
+        <header class="main-header">
+            <nav class="main-menu">
+                <div class="main-menu__wrapper">
+                    <div class="container">
+                        <div class="main-menu__wrapper-inner">
+                            <div class="main-menu__left">
+                                <div class="main-menu__logo">
+                                    <a href="index.html"><img
+                                            src="assets/images/resources/transparent_background_image.png" alt
+                                            style="width: 140px; height: 12vh ;margin-right:-30px;margin-left:-30px" /></a>
+                                    <div class="stmt">ADR</div>
+                                </div>
+                                <div class="main-menu__main-menu-box">
+                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                    <ul class="main-menu__list">
+                                        <li class="dropdown">
+                                            <a href="index.html"><i class="bi bi-house"></i>Home</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#"><i class="bi bi-gear"></i> Services</a>
+                                            <ul>
+                                                <li><a href="website-development.html">Web Development & Designing</a>
+                                                </li>
+                                                <li><a href="Artificial Intelligence & Machine Learning.html">Artificial
+                                                        Intelligence & Machine Learning</a></li>
+                                                <li><a href="Data Analytics & Power BI.html">Data Analytics & Power
+                                                        BI</a></li>
+                                                <li><a href="Project-marketing.html">Project And Data Management</a>
+                                                </li>
+                                                <li><a href="Development & Deployement.html">Development &
+                                                        Deployement</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#"><i class="bi bi-diagram-3"></i> Projects</a>
+                                            <ul>
+                                                <li><a href="projects.html">Projects</a></li>
+                                                <li><a href="project-details.html">Project Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#"><i class="bi bi-building"></i> Industry</a>
+                                            <ul>
+                                                <li><a href="Banking & Financial Services.html">Banking & Financial
+                                                        Services</a></li>
+                                                <li><a href="travel Transportation & Hospitatlity.html">Travel
+                                                        Transportation & Hospitatlity</a></li>
+                                                <li><a href="Insurance.html">Insurance</a></li>
+                                                <li><a href="Retail & Consumer Goods.html">Retail & Consumer Goods</a>
+                                                </li>
+                                                <li><a href="Social Media Platforms.html">Social Media Platforms</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="main-menu__right">
+                                <div class="main-menu__cart-search-box">
+                                    <a href="#" class="main-menu__search search-toggler"><i
+                                            class="bi bi-search"></i></a>
+                                    <a href="#" class="main-menu__cart"><i class="bi bi-cart3"></i></a>
+                                </div>
+                                <div class="main-menu__btn-box">
+                                    <a href="#form" class="main-menu__btn thm-btn"><i class="bi bi-envelope"></i>
+                                        Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div>
+        </div>
+        <section class="page-header">
+            <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/slider-1-2.jpg)"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h2>Artificial Intelligence & Machine Learning</h2>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><span>/</span></li>
+                        <li>Services</li>
+                        <li><span>/</span></li>
+                        <li>Artificial Intelligence & Machine Learning</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="service-details__sidebar">
+                            <div class="service-details__categories">
+                                <h4 class="service-details__categories-title">Categories</h4>
+                                <ul class="service-details__categories-list">
+                                    <li><a href="website-development.html">Web Development & Designing</a></li>
+                                    <li><a href="Data Analytics & Power BI.html">Data Analytics & Power BI</a></li>
+                                    <li><a href="Project-marketing.html">Project And Data Management</a></li>
+                                    <li><a href="Development & Deployement.html">Development & Deployment</a></li>
+                                    <li class="current"><a
+                                            href="Artificial Intelligence & Machine Learning.html">Artificial
+                                            Intelligence & Machine Learning</a></li>
+                                </ul>
+                            </div>
+                            <div class="service-details__need-help">
+                                <div class="service-details__need-help-bg"
+                                    style="background-image: url(assets/images/backgrounds/cta-one-bg.jpg)"></div>
+                                <h3 class="service-details__need-help-title">Need help</h3>
+                                <p class="service-details__need-help-text">Prefer speaking with a human to filling out a
+                                    form? call corporate office and we will connect you with a team member who can help.
+                                </p>
+                                <div class="service-details__need-help-phone">
+                                    <div class="service-details__need-help-phone-icon">
+                                        <span class="bi bi-telephone-fill"></span>
+                                    </div>
+                                    <div class="service-details__need-help-phone-content">
+                                        <span>Call anytime</span>
+                                        <p><a href="tel:+918178002165">+91 8178002165</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="service-details__right">
+                            <div class="service-details__content">
+                                <h3 class="service-details__title"><strong>Artificial Intelligence & Machine Learning by
+                                        ADR: Intelligent Solutions for Tomorrow</strong></h3>
+
+                                <div style="margin-bottom: 30px;">
+                                    <p class="service-details__text-1">
+                                        At ADR, we harness the transformative power of Artificial Intelligence and
+                                        Machine Learning to drive innovation and create intelligent solutions that
+                                        revolutionize how businesses operate. Our expertise spans across cutting-edge AI
+                                        technologies, from predictive analytics and natural language processing to
+                                        computer vision and deep learning algorithms.
+                                    </p>
+
+                                    <p class="service-details__text-1">
+                                        Whether you're looking to automate complex processes, gain deeper insights from
+                                        your data, or create intelligent applications that adapt and learn, our AI/ML
+                                        solutions are designed to give your business a competitive edge in the digital
+                                        age.
+                                    </p>
+
+                                    <ul
+                                        style="list-style-type: disc; margin-left: 20px; color: #666; line-height: 1.8; margin-top: 15px;">
+                                        <li><strong>Custom AI Solutions:</strong> Tailored artificial intelligence
+                                            systems for your specific needs</li>
+                                        <li><strong>Machine Learning Models:</strong> Advanced algorithms that learn and
+                                            improve over time</li>
+                                        <li><strong>Predictive Analytics:</strong> Data-driven insights for better
+                                            decision making</li>
+                                        <li><strong>Neural Networks:</strong> Deep learning solutions for complex
+                                            problem solving</li>
+                                        <li><strong>Intelligent Automation:</strong> AI-powered process optimization and
+                                            automation</li>
+                                    </ul>
+                                </div>
+
+                                <h4 class="service-details__subtitle" style="color: #00bfff;"><strong>Transforming Data
+                                        into Intelligence: The ADR AI Advantage</strong></h4>
+
+                                <div style="margin-bottom: 30px;">
+                                    <p class="service-details__text-2">
+                                        Our approach to AI and Machine Learning goes beyond simple implementation. We
+                                        work closely with you to understand your business challenges and objectives,
+                                        then design intelligent systems that not only solve current problems but also
+                                        adapt and evolve with your growing needs.
+                                    </p>
+
+                                    <p class="service-details__text-2">
+                                        From data preprocessing and model training to deployment and continuous
+                                        optimization, we handle every aspect of your AI journey. Our team of experienced
+                                        data scientists and AI engineers ensures that your solutions are not just
+                                        technically sound but also aligned with your business strategy.
+                                    </p>
+                                </div>
+
+                                <h4 class="service-details__subtitle" style="color: #00bfff;"><strong>Cutting-Edge AI
+                                        Technologies We Master</strong></h4>
+
+                                <div style="margin-bottom: 30px;">
+                                    <p class="service-details__text-3">
+                                        Our expertise encompasses the full spectrum of AI and ML technologies. We
+                                        leverage state-of-the-art frameworks like TensorFlow, PyTorch, and Scikit-learn
+                                        to build robust, scalable solutions that deliver measurable results.
+                                    </p>
+
+                                    <p class="service-details__text-3">
+                                        Whether it's natural language processing for chatbots and sentiment analysis,
+                                        computer vision for image recognition and object detection, or reinforcement
+                                        learning for optimization problems, we have the technical depth to bring your AI
+                                        vision to life.
+                                    </p>
+
+                                    <ul
+                                        style="list-style-type: disc; margin-left: 20px; color: #666; line-height: 1.8; margin-top: 15px;">
+                                        <li><strong>Natural Language Processing:</strong> Text analysis, chatbots, and
+                                            language understanding</li>
+                                        <li><strong>Computer Vision:</strong> Image recognition, object detection, and
+                                            visual analytics</li>
+                                        <li><strong>Deep Learning:</strong> Neural networks for complex pattern
+                                            recognition</li>
+                                        <li><strong>Reinforcement Learning:</strong> AI systems that learn through
+                                            interaction and feedback</li>
+                                    </ul>
+                                </div>
+
+                                <h4 class="service-details__subtitle" style="color: #00bfff;"><strong>From Concept to
+                                        Deployment: End-to-End AI Solutions</strong></h4>
+
+                                <div style="margin-bottom: 30px;">
+                                    <p class="service-details__text-4">
+                                        We believe in delivering complete AI solutions that integrate seamlessly into
+                                        your existing infrastructure. Our end-to-end approach covers everything from
+                                        initial data analysis and model development to production deployment and ongoing
+                                        maintenance.
+                                    </p>
+
+                                    <p class="service-details__text-4">
+                                        Our solutions are built with scalability and performance in mind, ensuring they
+                                        can handle growing data volumes and increasing user demands while maintaining
+                                        accuracy and speed.
+                                    </p>
+                                </div>
+
+                                <h4 class="service-details__subtitle" style="color: #00bfff;"><strong>Industry-Specific
+                                        AI Applications</strong></h4>
+
+                                <div style="margin-bottom: 30px;">
+                                    <p class="service-details__text-5">
+                                        Every industry has unique challenges that can benefit from AI solutions. We have
+                                        experience developing specialized AI applications across various sectors, from
+                                        healthcare and finance to retail and manufacturing.
+                                    </p>
+
+                                    <p class="service-details__text-5">
+                                        Our industry-specific expertise allows us to understand the nuances of your
+                                        business domain and create AI solutions that address real-world challenges while
+                                        complying with industry standards and regulations.
+                                    </p>
+                                </div>
+
+                                <div class="service-details__benefits-box">
+                                    <h3 class="service-details__subtitle" style="color: #00bfff; font-weight: bold;">Our
+                                        AI & Machine Learning Services Include:</h3>
+
+                                    <div class="row">
+                                        <div class="col-xl-6">
+                                            <div class="service-details__benefits-single">
+                                                <div class="service-details__benefits-icon">
+                                                    <span class="bi bi-cpu" style="color: #00bfff;"></span>
+                                                </div>
+                                                <div class="service-details__benefits-content">
+                                                    <h4>Machine Learning Models</h4>
+                                                    <p>Custom ML algorithms for predictive analytics, classification,
+                                                        and regression tasks.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="service-details__benefits-single">
+                                                <div class="service-details__benefits-icon">
+                                                    <span class="bi bi-eye" style="color: #00bfff;"></span>
+                                                </div>
+                                                <div class="service-details__benefits-content">
+                                                    <h4>Computer Vision</h4>
+                                                    <p>Image recognition, object detection, and visual analytics
+                                                        solutions.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="service-details__benefits-single">
+                                                <div class="service-details__benefits-icon">
+                                                    <span class="bi bi-chat-dots" style="color: #00bfff;"></span>
+                                                </div>
+                                                <div class="service-details__benefits-content">
+                                                    <h4>Natural Language Processing</h4>
+                                                    <p>Chatbots, sentiment analysis, and text processing applications.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="service-details__benefits-single">
+                                                <div class="service-details__benefits-icon">
+                                                    <span class="bi bi-graph-up-arrow" style="color: #00bfff;"></span>
+                                                </div>
+                                                <div class="service-details__benefits-content">
+                                                    <h4>Predictive Analytics</h4>
+                                                    <p>Data-driven forecasting and trend analysis for strategic decision
+                                                        making.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="service-details__benefits-single">
+                                                <div class="service-details__benefits-icon">
+                                                    <span class="bi bi-robot" style="color: #00bfff;"></span>
+                                                </div>
+                                                <div class="service-details__benefits-content">
+                                                    <h4>AI Automation</h4>
+                                                    <p>Intelligent process automation and workflow optimization systems.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="service-details__benefits-single">
+                                                <div class="service-details__benefits-icon">
+                                                    <span class="bi bi-layers" style="color: #00bfff;"></span>
+                                                </div>
+                                                <div class="service-details__benefits-content">
+                                                    <h4>Deep Learning</h4>
+                                                    <p>Neural networks and advanced AI models for complex problem
+                                                        solving.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="service-details__benefits-single">
+                                                <div class="service-details__benefits-icon">
+                                                    <span class="bi bi-shield-check" style="color: #00bfff;"></span>
+                                                </div>
+                                                <div class="service-details__benefits-content">
+                                                    <h4>AI Ethics & Security</h4>
+                                                    <p>Responsible AI development with built-in security and ethical
+                                                        considerations.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="service-details__benefits-single">
+                                                <div class="service-details__benefits-icon">
+                                                    <span class="bi bi-cloud-arrow-up" style="color: #00bfff;"></span>
+                                                </div>
+                                                <div class="service-details__benefits-content">
+                                                    <h4>AI Model Deployment</h4>
+                                                    <p>Cloud-based deployment and scaling of AI models for production
+                                                        use.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        </section>
+
+        <!-- Modern Content Section Start -->
+        <section class="modern-content-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section-header text-center">
+                            <h2 class="section-title" style="color: #09d2f5;">Why Choose ADR for AI & Machine Learning?
+                            </h2>
+                            <p class="section-subtitle">Experience the difference that professional expertise and
+                                personalized service can make in your AI journey</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-lightbulb"></i>
+                            </div>
+                            <h4 class="feature-title">Innovation-Driven</h4>
+                            <p class="feature-text">We stay at the forefront of AI research and development, bringing
+                                cutting-edge solutions to your business challenges.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h4 class="feature-title">Expert Team</h4>
+                            <p class="feature-text">Our team of data scientists and AI engineers brings years of
+                                experience across multiple industries and domains.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-gear-wide-connected"></i>
+                            </div>
+                            <h4 class="feature-title">Scalable Solutions</h4>
+                            <p class="feature-text">Our AI solutions are built to scale with your business, handling
+                                increasing data volumes and user demands.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-speedometer2"></i>
+                            </div>
+                            <h4 class="feature-title">Performance Optimized</h4>
+                            <p class="feature-text">We optimize every aspect of our AI models for speed, accuracy, and
+                                efficiency in real-world applications.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-shield-lock"></i>
+                            </div>
+                            <h4 class="feature-title">Secure & Compliant</h4>
+                            <p class="feature-text">All our AI solutions are developed with security and regulatory
+                                compliance as top priorities.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-headset"></i>
+                            </div>
+                            <h4 class="feature-title">Ongoing Support</h4>
+                            <p class="feature-text">Comprehensive support and maintenance for all our AI
+                                implementations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="modern-content-section">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-xl-12 text-center">
+                        <div class="cta-section"
+                            style="background: linear-gradient(135deg, #00bfff 0%, #0099cc 100%); padding: 50px; border-radius: 20px;">
+                            <h3 class="cta-title"
+                                style="color: #fff; font-size: 36px; margin-bottom: 20px; font-weight: 700;">Ready to
+                                Transform Your Business with AI?</h3>
+                            <p class="cta-text"
+                                style="color: rgba(255, 255, 255, 0.9); font-size: 18px; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                                Let's discuss how our AI and Machine Learning solutions can drive innovation and growth
+                                for your organization.</p>
+                            <a href="#form" class="thm-btn"
+                                style="background: #fff; color: #00bfff; padding: 15px 40px; border-radius: 30px; font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; transition: all 0.3s ease;">Get
+                                Started Today</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="site-footer-bg" style="background-image: url(assets/images/backgrounds/site-footer-bg.jpg);">
+            </div>
+            <div class="container">
+                <div class="site-footer__top">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="footer-widget__column footer-widget__about">
+                                <div class="footer-widget__about-text-box">
+                                    <p class="footer-widget__about-text">We work with a passion of taking challenges and
+                                        creating new ones in advertising sector.</p>
+                                </div>
+                                <div class="site-footer__social">
+                                    <a href="#"><i class="bi bi-twitter"></i></a>
+                                    <a href="#"><i class="bi bi-facebook"></i></a>
+                                    <a href="#"><i class="bi bi-pinterest"></i></a>
+                                    <a href="#"><i class="bi bi-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                            <div class="footer-widget__column footer-widget__explore clearfix">
+                                <h3 class="footer-widget__title">Explore</h3>
+                                <ul class="footer-widget__explore-list list-unstyled clearfix">
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="team.html">Our Team</a></li>
+                                    <li><a href="services.html">Services List</a></li>
+                                    <li><a href="projects.html">Projects</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                            <div class="footer-widget__column footer-widget__services clearfix">
+                                <h3 class="footer-widget__title">Services</h3>
+                                <ul class="footer-widget__services-list list-unstyled clearfix">
+                                    <li><a href="website-development.html">Web Development</a></li>
+                                    <li><a href="Data Analytics & Power BI.html">Data Analytics</a></li>
+                                    <li><a href="Project-marketing.html">Project Management</a></li>
+                                    <li><a href="Development & Deployement.html">Development & Deployment</a></li>
+                                    <li><a href="Artificial Intelligence & Machine Learning.html">Artificial
+                                            Intelligence & Machine Learning </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                            <div class="footer-widget__column footer-widget__contact clearfix">
+                                <h3 class="footer-widget__title">Contact</h3>
+                                <ul class="footer-widget__contact-list list-unstyled clearfix">
+                                    <li>
+                                        <div class="icon">
+                                            <span class="bi bi-envelope-fill"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="mailto:info@adrtechnology.com">info@adrtechnology.com</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="bi bi-geo-alt-fill"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>123 Business Street<br>City, State 12345</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-footer__bottom">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="site-footer__bottom-inner">
+                                <p class="site-footer__bottom-text">© All Copyright 2023 by <a href="#">ADR
+                                        TECHNOLOGY</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /.page-wrapper -->
+
+        <div class="mobile-nav__wrapper">
+            <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+            <div class="mobile-nav__content">
+                <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+                <div class="logo-box">
+                    <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-2.png"
+                            width="143" alt="" /></a>
+                </div>
+                <div class="mobile-nav__container"></div>
+                <ul class="mobile-nav__contact list-unstyled">
+                    <li>
+                        <i class="fa fa-envelope"></i>
+                        <a href="mailto:info@adr.com">info@adr.com</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-phone-alt"></i>
+                        <a href="tel:+918178002165">+91 8178002165</a>
+                    </li>
+                </ul>
+                <div class="mobile-nav__top">
+                    <div class="mobile-nav__social">
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-facebook-square"></a>
+                        <a href="#" class="fab fa-pinterest-p"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-popup">
+            <div class="search-popup__overlay search-toggler"></div>
+            <div class="search-popup__content">
+                <form action="#">
+                    <label for="search" class="sr-only">search here</label>
+                    <input type="text" id="search" placeholder="Search Here..." />
+                    <button type="submit" aria-label="search submit" class="thm-btn">
+                        <i class="icon-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-up-arrow"></i></a>
+
+        <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+        <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+        <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+        <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+        <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+        <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+        <script src="assets/vendors/odometer/odometer.min.js"></script>
+        <script src="assets/vendors/swiper/swiper.min.js"></script>
+        <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+        <script src="assets/vendors/wow/wow.js"></script>
+        <script src="assets/vendors/isotope/isotope.js"></script>
+        <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+        <script src="assets/vendors/jquery.circle-type/jquery.circleType.js"></script>
+        <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+        <script src="assets/js/zefxa.js"></script>
+
+</body>
+
+</html>
